@@ -20,11 +20,19 @@ public class ReviewServiceEjb implements ReviewService {
 
     @Override
     public List<ReviewEntity> getAllNewestFirst() {
+        System.out.println("ReviewService.getAllNewestFirst");
         return reviewDao.getAllNewestFirst();
     }
 
     @Override
     public ReviewEntity getReviewById(int id) {
+        System.out.println("ReviewService.getReviewById");
         return reviewDao.getReviewById(id);
+    }
+
+    @Override
+    public void addReview(ReviewEntity reviewEntity) {
+        System.out.println("ReviewService.addReview");
+        reviewDao.addReview(reviewEntity);
     }
 }

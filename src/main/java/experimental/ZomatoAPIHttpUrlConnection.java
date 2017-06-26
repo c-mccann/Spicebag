@@ -1,5 +1,7 @@
 package experimental;
 
+import yelpjsonobjects.Restaurant;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -120,7 +122,7 @@ public class ZomatoAPIHttpUrlConnection {
 
 
         for(Restaurant r: restaurants){
-            System.out.println(r.getName());
+//            System.out.println(r.getName());
         }
 
     }
@@ -155,15 +157,15 @@ public class ZomatoAPIHttpUrlConnection {
             String longitude = blockTwo[6].split(",")[0];
             String zipCode = blockTwo[7].split(",")[0];
 
-            restaurant.setId(new Integer(id.substring(1, id.length() - 1)));
-            restaurant.setName(name.substring(1, name.length() - 1));
-            restaurant.setAddress(address.substring(1, address.length() - 1));
-            restaurant.setLocality(locality.substring(1, locality.length() - 1));
-            restaurant.setCity(city.substring(1, city.length() - 1));
-            restaurant.setCityId(new Integer(cityId));
-            restaurant.setLatitude(new Double(latitude.substring(1, latitude.length() - 1)));
-            restaurant.setLongitude(new Double(longitude.substring(1, longitude.length() - 1)));
-            restaurant.setZipCode(zipCode.substring(1, zipCode.length() - 1));
+//            restaurant.setId(new Integer(id.substring(1, id.length() - 1)));
+//            restaurant.setName(name.substring(1, name.length() - 1));
+//            restaurant.setAddress(address.substring(1, address.length() - 1));
+//            restaurant.setLocality(locality.substring(1, locality.length() - 1));
+//            restaurant.setCity(city.substring(1, city.length() - 1));
+//            restaurant.setCityId(new Integer(cityId));
+//            restaurant.setLatitude(new Double(latitude.substring(1, latitude.length() - 1)));
+//            restaurant.setLongitude(new Double(longitude.substring(1, longitude.length() - 1)));
+//            restaurant.setZipCode(zipCode.substring(1, zipCode.length() - 1));
 
             restaurants.add(restaurant);
         }

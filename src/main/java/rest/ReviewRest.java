@@ -4,10 +4,7 @@ import ejb.ReviewService;
 import entities.ReviewEntity;
 
 import javax.ejb.EJB;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -29,5 +26,11 @@ public class ReviewRest {
     @Produces(MediaType.APPLICATION_JSON) @Path("/{id}")
     public ReviewEntity getReviewById(@PathParam("id") int id){
         return reviewService.getReviewById(id);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void addReview(ReviewEntity reviewEntity){
+        reviewService.addReview(reviewEntity);
     }
 }

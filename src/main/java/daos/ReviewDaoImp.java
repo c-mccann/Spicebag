@@ -30,4 +30,9 @@ public class ReviewDaoImp implements ReviewDao {
         query.setParameter("id", id);
         return (ReviewEntity) query.getSingleResult();
     }
+
+    @Override
+    public void addReview(ReviewEntity reviewEntity) {
+        em.persist(reviewEntity);
+    }
 }

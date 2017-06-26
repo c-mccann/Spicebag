@@ -10,4 +10,5 @@ import java.util.List;
 public interface ReviewService {
     List<ReviewEntity> getAllNewestFirst();
     ReviewEntity getReviewById(int id);
+    void addReview(ReviewEntity reviewEntity);
 }

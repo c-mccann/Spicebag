@@ -1,6 +1,7 @@
 package entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -101,6 +102,7 @@ public class ReviewEntity implements Serializable {
     }
 
 
+    @JsonProperty("restaurant")
     @ManyToOne(fetch = FetchType.EAGER) @JoinColumn(name = "restaurant_id", referencedColumnName="restaurant_id")
     public RestaurantEntity getRestaurantEntity() {
         return restaurantEntity;
@@ -110,6 +112,7 @@ public class ReviewEntity implements Serializable {
         this.restaurantEntity = restaurantEntity;
     }
 
+    @JsonProperty("user")
     @ManyToOne(fetch=FetchType.EAGER) @JoinColumn(name = "user_id", referencedColumnName="user_id")
     public UserEntity getUserEntity() {
         return userEntity;

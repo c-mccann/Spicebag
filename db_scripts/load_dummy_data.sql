@@ -5,7 +5,8 @@ INSERT INTO users
     VALUES(1, 'Carl', 'McCann', 'c-mccann', 'carlmccann2@gmail.com', 'password');
 
 INSERT INTO users
-    VALUES(2,'John', 'Doe', 'D-Bag', 'db@gmail.com', 'password');
+    VALUES(2,'John', 'Doe', 'D-Man
+    ', 'db@gmail.com', 'password');
 
 INSERT INTO reviews
     VALUES(1, '/Volumes/Data/Users/carlmccann2/Desktop/13256293_1012206312162138_4890469766904872094_n.jpg', 1, '2016-10-24 10:00:00', 1, 1, 'Biggest Load of pox Ive ever eaten');

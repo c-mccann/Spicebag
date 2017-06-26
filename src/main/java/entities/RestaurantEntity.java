@@ -1,6 +1,8 @@
 package entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +13,11 @@ import java.util.Set;
  * Created by carlmccann2 on 12/06/2017.
  */
 
+@NamedQueries({
+        @NamedQuery(name="postRestaurantCheck", query="FROM RestaurantEntity re WHERE re.name = :name")
+})
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name="restaurants")
 public class RestaurantEntity implements Serializable{
@@ -26,6 +33,15 @@ public class RestaurantEntity implements Serializable{
 
 
     public RestaurantEntity() {
+    }
+
+    public RestaurantEntity(String name, String address, BigDecimal latitude, BigDecimal longitude, String phone_number) {
+        this.restaurant_id = restaurant_id;
+        this.name = name;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.phone_number = phone_number;
     }
 
     public RestaurantEntity(String name, String address, BigDecimal latitude, BigDecimal longitude, String phone_number, Set<ReviewEntity> restaurant_reviews) {
@@ -61,6 +77,7 @@ public class RestaurantEntity implements Serializable{
     }
 
     @Column(name="name")
+    @JsonProperty("name")
     public String getName() {
         return name;
     }
